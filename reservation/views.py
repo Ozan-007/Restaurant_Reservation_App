@@ -12,11 +12,13 @@ def signup(request):
     register_form = SignUpForm()
     if request.method == "POST":
         register_form = SignUpForm(request.POST)
-    if register_form.is_valid():
-        register_form.save()
-        username = register_form.cleaned_data.get('username')
-        messages.success(request, f'Welcome {username}, your account has been created.')
-        return redirect('index')
+        if register_form.is_valid():
+            register_form.save()
+            username = register_form.cleaned_data.get('username')
+            messages.success(request, f'Welcome {username}, your account has been created.')
+            return redirect('index')
+        else:
+           messages.error(request, register_form.errors)
     context ={'signupform': SignUpForm()}
     return render(request,"signup.html",context)
 
