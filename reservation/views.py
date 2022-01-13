@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.template import context
 from .forms import SignUpForm
 from django.contrib import messages
+import time
 # Create your views here.
 def index(request):
     context={}
@@ -14,7 +15,7 @@ def signup(request):
     if register_form.is_valid():
         register_form.save()
         username = register_form.cleaned_data.get('username')
-        messages.success(request, f'Account created for {username}.')
+        messages.success(request, f'Welcome {username}, your account has been created.')
         return redirect('index')
     context ={'signupform': SignUpForm()}
     return render(request,"signup.html",context)
