@@ -14,7 +14,6 @@ PARTY_SIZES = [
 class Table(models.Model):
     party_size = models.IntegerField(choices=PARTY_SIZES)
     available_date = models.DateField()
-    available_time = models.TimeField()
 
     def __str__(self):
         return f"Table Number {self.id}"
