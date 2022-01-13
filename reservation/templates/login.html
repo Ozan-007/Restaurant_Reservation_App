@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<style>
+   h2{
+      position:relative;
+      justify-content: center;
+      align-items: center;
+        justify-self: center;
+        margin-bottom:2rem;
+    }
+    h6{
+       padding-top: 1.2rem;
+
+   }
+   
+   .container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+        min-height: 65vh;
+    }
+
+   
+</style>
+
+<div class="container">
+    <form action="" method="post">
+            <h2>LOGIN</h2>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <h6>Don't have an account <a href="{% url 'signup' %}">Sign Up</a></h6>
+</div>
+
+
+{% endblock content %}

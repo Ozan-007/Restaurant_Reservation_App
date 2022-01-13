@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.template import context
 from .forms import SignUpForm
 from django.contrib import messages
-import time
+from django.contrib.auth import authenticate, login
 # Create your views here.
 def index(request):
     context={}
@@ -19,3 +19,18 @@ def signup(request):
         return redirect('index')
     context ={'signupform': SignUpForm()}
     return render(request,"signup.html",context)
+
+
+def loginpage(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        account = authenticate(username=username,password=password)
+        if account is not None:
+            login(request, account)
+            return redirect('home')
+        else:
+            messages.warning(request,"Invalid Username or Password")
+    context={}
+    return render(request,'login.html',context)
