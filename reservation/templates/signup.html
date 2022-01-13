@@ -1,12 +1,28 @@
 {% extends 'index.html' %}
 
+
 {% block content %}
-    
-<h1>Sign Up</h1>
-<form action="" method="post">
+{% load crispy_forms_tags %}
+<style>
+    .container{
+        border: red;
+        display:flex;
+        padding-top: 3rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+    }
+</style>
+
+
+<div class="container">    
+    <h1>Sign Up</h1>
+    <form action="" method="post">
         {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="signup">
+        
+        {{ signupform|crispy }}
+        
+        <input class="btn btn-primary" type="submit" value="Submit">
     </form>
-  
+</div>
 {% endblock content %}
