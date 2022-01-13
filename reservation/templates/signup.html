@@ -26,6 +26,7 @@
         {{ signupform|crispy }}
         
         <input class="btn btn-primary" type="submit" value="Submit">
+        <h6 style="padding-top: 1rem">Already have an account <a href="{% url 'login' %}">Login</a></h6>
     </form>
 </div>
 {% endblock content %}
