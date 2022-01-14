@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.template import context
 from .forms import SignUpForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 def index(request):
     context={}
@@ -31,8 +31,14 @@ def loginpage(request):
         account = authenticate(username=username,password=password)
         if account is not None:
             login(request, account)
-            return redirect('home')
+            return redirect('index')
         else:
             messages.warning(request,"Invalid Username or Password")
     context={}
     return render(request,'login.html',context)
+
+
+
+def logoutview(request):
+    logout(request)
+    return redirect('login')

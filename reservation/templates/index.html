@@ -30,15 +30,20 @@
                 </li>
               </ul>
         </div>
+          {% if request.user.username %}
+            
+        <span style="font-size:1rem; padding-right: 2rem;">Hello {{request.user.username}}</span>
+        <span><a href="{% url 'logout' %}">Logout</a></span>
+        {% endif %}
+
       </nav>
       <body>
-        {% if messages in 'login'%}
+    
         {% for message in messages %}
         <div class="alert alert-{{message.tags}}" role="alert">
         {{ message }}
         </div>  
         {% endfor %}
-{% endif %}
         
 
         {% block content %}
