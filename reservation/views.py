@@ -4,9 +4,9 @@ from .forms import SignUpForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
-def index(request):
+def home(request):
     context={}
-    return render(request,"index.html",context)
+    return render(request,"home.html",context)
 
 def signup(request):
     register_form = SignUpForm()
