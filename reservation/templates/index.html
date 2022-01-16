@@ -12,31 +12,32 @@
 
         <title>Restaurant App</title>
       </head>
-      <nav class="navbar navbar-expand-lg navbar-primary bg-light">
-        <a class="navbar-brand" href="">Ozan's Restaurant</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link active" href="{% url 'home' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
-              </ul>
-        </div>
-          {% if request.user.username %}
-            
-        <span style="font-size:1rem; padding-right: 2rem;">Hello {{request.user.username}}</span>
-        <span><a href="{% url 'logout' %}">Logout</a></span>
-        {% endif %}
 
-      </nav>
+      <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'signup' %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'login' %}">Login</a>
+              </li>
+            </ul>
+          </div>
+          {% if request.user.username %}
+          
+          <span style="font-size:1rem; padding-right: 2rem;">Hello {{request.user.username}}</span>
+          <span><a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'logout' %}">Logout</a></span>
+          {% endif %}
+          
+        </nav>
         
         <body>
           
