@@ -16,7 +16,7 @@ def signup(request):
             register_form.save()
             username = register_form.cleaned_data.get('username')
             messages.success(request, f'Welcome {username}, your account has been created.')
-            return redirect('index')
+            return redirect('home')
         else:
            messages.error(request, register_form.errors)
     context ={'signupform': SignUpForm()}
@@ -31,7 +31,7 @@ def loginpage(request):
         account = authenticate(username=username,password=password)
         if account is not None:
             login(request, account)
-            return redirect('index')
+            return redirect('home')
         else:
             messages.warning(request,"Invalid Username or Password")
     context={}
