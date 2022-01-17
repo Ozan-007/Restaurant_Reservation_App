@@ -6,13 +6,26 @@
 
 <div class="container">
    <div class="intro">
-      <h2>Welcome</h2>
-      <h2>to the</h2>
-      <h2 style="color:blue">ESKIS</h2>
+     <div class="headline">
+        <h2>Welcome</h2>
+        <h2>to the</h2>
+        <h2 style="color:blue">ESKIS.</h2>
+      </div>
+      <h3>The Best 👑 in Warsaw</h3>
+      <div class="explanation" style="max-width: 300px;">
+         <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam obcaecati sapiente quae eius quis aliquid porro itaque quidem, perspiciatis totam.</p>
+      </div>
+      <div class="loginButton">
+         <a href="{% url 'login' %}">
+            <button type="button"><div class="log">Login</div></button>
+         </a>
+      </div>
    </div>
+
+
    <div class="recipe">
-      <img src="/static/images/Rectangle 50.png" alt="" srcset="">
       <img src="/static/images/Rectangle 51.png" alt="" srcset="">
+      <img src="/static/images/Rectangle 50.png" alt="" srcset="">
       <img src="/static/images/Rectangle 52.png" alt="" srcset="">
       <img src="/static/images/Rectangle 53.png" alt="" srcset="">
       <img src="/static/images/Rectangle 54.png" alt="" srcset="">
@@ -28,16 +41,37 @@
       justify-content: space-evenly;
       align-items: center;
       min-height: 70vh;
-      border: 4px solid red;
+      /* border: 4px solid blue; */
       min-width: 100%;
-      margin-top: 2rem;
+      margin-top: 5rem;
    }
    .recipe{
       display: grid;
-      grid-template-columns: 2fr 2fr;
-      border: 4px solid yellow;
+      grid-template-columns: repeat(2, 10rem);
+      /* border: 4px solid yellow; */
+      row-gap: 3rem;
+      column-gap: 3rem;
    }
+   button{
+      margin-top: 1.5rem;
+      min-width: 200px;
+      background-color: blue;
+      color: white;
+      font-weight: bold;
+      font-style: italic;
+      cursor: pointer;
+   }
+   button:hover{
+      background-color: white;
+      color: blue;
+      transition-duration: .3s;
+   }
+   .log{
+      padding-right:70%;   }
 
-
-</style>
+   img{
+      max-width: 150px;
+      max-height: 150px;
+   }
+   </style>
 {% endblock content %}
