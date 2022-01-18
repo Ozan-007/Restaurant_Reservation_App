@@ -12,6 +12,6 @@ class SignUpForm(UserCreationForm):
 
 
 class TableForm(forms.ModelForm):
-    class meta:
+    class Meta:
         model = Table
         fields = "__all__"
