@@ -13,6 +13,7 @@ PARTY_SIZES = [
 
 
 class Table(models.Model):
+    
     name = models.CharField(max_length=50, default=None)
     party_size = models.CharField(max_length=1, choices=PARTY_SIZES)
     available_date = models.DateField()

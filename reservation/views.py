@@ -59,4 +59,4 @@ def loginpage(request):
 
 def logoutview(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
