@@ -21,28 +21,28 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav justify-content-center">
               <li class="nav-item">
-                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'home' %}">Home</a>
+                <a class="nav-link alert-info" style="font-weight: bold;margin:0.5rem; border-radius:70px" href="{% url 'home' %}">Home</a>
               </li>
               {% if request.user.username %}
               <li class="nav-item">
-                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'reservation' %}">Reservations</a>
+                <a class="nav-link alert-info" style="font-weight: bold;margin:0.5rem; border-radius:70px" href="{% url 'reservation' %}">Reservations</a>
               </li>
             {% endif %}
             {% if not request.user.username %}
           
               <li class="nav-item">
-                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'signup' %}">Sign Up</a>
+                <a class="nav-link alert-info" style="font-weight: bold;margin:0.5rem; border-radius:70px" href="{% url 'signup' %}">Sign Up</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'login' %}">Login</a>
+                <a class="nav-link alert-info" style="font-weight: bold;margin:0.5rem; border-radius:70px" href="{% url 'login' %}">Login</a>
               </li>
               {% endif %}
               {% if request.user.username %}
               <li class="nav-item">
-                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-link alert-info" style="font-weight: bold;margin:0.5rem; border-radius:70px" href="{% url 'logout' %}">Logout</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link alert-info" style="margin:0.5rem; border-radius:70px" href="{% url 'home' %}">Hello {{request.user.username}}</a>
+                <a class="nav-link alert-info" style="font-weight: bold; margin:0.5rem; border-radius:70px" href="{% url 'home' %}">{{request.user.username}}</a>
               </li>   
                {% endif %}
           

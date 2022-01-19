@@ -17,7 +17,8 @@ class DateInput(forms.DateInput):
 class TableForm(forms.ModelForm):
     class Meta:
         model = Table
-        fields = '__all__'
+        exclude = ['customer']
+        
         widgets = {
             'available_date': DateInput(),
         }

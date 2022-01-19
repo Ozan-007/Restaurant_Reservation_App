@@ -1,5 +1,6 @@
+from asyncore import write
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 PARTY_SIZES = [
@@ -12,6 +13,7 @@ PARTY_SIZES = [
 
 
 class Table(models.Model):
+    customer = models.ForeignKey(User, on_delete=models.CASCADE,default= None)
     party_size = models.CharField(max_length=1, choices=PARTY_SIZES)
     available_date = models.DateField()
 
