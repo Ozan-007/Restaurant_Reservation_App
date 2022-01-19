@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 
 PARTY_SIZES = [
-    (1,"1"),
-    (2, "2"),
-    (4, "3"),
-    (6, "4"),
-    (8 , "8")
+    ("1","1"),
+    ("2", "2"),
+    ("4", "3"),
+    ("6", "4"),
+    ("8" , "8")
 ]
 
 
