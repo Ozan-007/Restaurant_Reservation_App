@@ -1,3 +1,4 @@
+from dataclasses import field
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
@@ -17,7 +18,7 @@ class DateInput(forms.DateInput):
 class TableForm(forms.ModelForm):
     class Meta:
         model = Table
-        exclude = ['customer']
+        fields = "__all__" 
         
         widgets = {
             'available_date': DateInput(),

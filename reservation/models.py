@@ -13,7 +13,7 @@ PARTY_SIZES = [
 
 
 class Table(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE,default= None)
+    name = models.CharField(max_length=50, default=None)
     party_size = models.CharField(max_length=1, choices=PARTY_SIZES)
     available_date = models.DateField()
 
