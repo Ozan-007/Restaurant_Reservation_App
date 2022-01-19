@@ -12,7 +12,7 @@ PARTY_SIZES = [
 
 
 class Table(models.Model):
-    party_size = models.IntegerField(choices=PARTY_SIZES)
+    party_size = models.CharField(max_length=1, choices=PARTY_SIZES)
     available_date = models.DateField()
 
     def __str__(self):
