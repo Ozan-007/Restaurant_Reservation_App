@@ -15,7 +15,8 @@ def reservate(request):
         if reservation_form.is_valid():
             reservation_form.save()
             party_size = reservation_form.cleaned_data.get('party_size')
-            messages.success(request, f'Table for {party_size} people has been reserverd for you.')
+            available_date = reservation_form.cleaned_data.get('available_date')
+            messages.success(request, f'Table for {party_size} people has been reserverd on {available_date}.')
             return redirect('home')
         else:
            messages.error(request, reservation_form.errors)

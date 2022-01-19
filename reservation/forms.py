@@ -11,7 +11,14 @@ class SignUpForm(UserCreationForm):
 
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+ 
 class TableForm(forms.ModelForm):
     class Meta:
         model = Table
-        fields = "__all__"
+        fields = '__all__'
+        widgets = {
+            'available_date': DateInput(),
+        }
+
